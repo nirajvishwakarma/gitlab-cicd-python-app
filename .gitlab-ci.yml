@@ -22,7 +22,7 @@ build_image:
   variables:
     DOCKER_TLS_CERTDIR: " /certs "
   before_script:
-    - docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker
+    - docker run -v /var/run/docker.sock:/var/run/docker.sock -d docker
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
   script:
     - whoami
