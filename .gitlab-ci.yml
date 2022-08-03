@@ -16,17 +16,17 @@ run_tests:
     - make test
 
 
-#build_image:
-#  stage: build
-#  image: docker:18.09.7-dind
-#  services:
-#    - docker:18.09.7-dind
-#  variables:
-#    DOCKER_TLS_CERTDIR: "/certs/client"
-#    DOCKER_DRIVER: overlay
-#  before_script:
-#    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
-#  script:
-#    - docker ps -a
-#    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
-#    - docker push $IMAGE_NAME:$IMAGE_TAG
+build_image:
+  stage: build
+  image: docker:18.09.7-dind
+  services:
+    - docker:18.09.7-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs/client"
+    DOCKER_DRIVER: overlay
+  before_script:
+    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+  script:
+    - docker ps -a
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+    - docker push $IMAGE_NAME:$IMAGE_TAG
