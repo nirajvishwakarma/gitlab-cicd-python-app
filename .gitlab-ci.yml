@@ -19,7 +19,7 @@ build_image:
   stage: build
   image: docker:18.09.7-dind
   services:
-    - docker:19-dind
+    - docker:18.09.7-dind
   variables:
     DOCKER_TLS_CERTDIR: "/certs/client"
     DOCKER_DRIVER: overlay
