@@ -20,7 +20,7 @@ build_image:
   services:
     - docker:dind
   variables:
-    DOCKER_TLS_CERTDIR: " /certs "
+    DOCKER_TLS_CERTDIR: " /certs/client "
   before_script:
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
   script:
