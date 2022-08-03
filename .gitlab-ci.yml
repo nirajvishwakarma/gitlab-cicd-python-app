@@ -11,7 +11,7 @@ run_tests:
   stage: test
   image: python:3.9-slim-buster
   before_script:
-    - apt-get update && apt install python3.8-venv && apt-get install make
+    - apt-get update && apt-get install python3.8-venv && apt-get install make
   script:
     - make test
 
@@ -21,7 +21,8 @@ build_image:
   services:
     - docker:19-dind
   variables:
-    DOCKER_TLS_CERTDIR: " /certs/client "
+    DOCKER_TLS_CERTDIR: "/certs/client"
+    DOCKER_DRIVER: overlay
   before_script:
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
   script:
