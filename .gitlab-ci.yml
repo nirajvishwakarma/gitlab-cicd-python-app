@@ -1,7 +1,7 @@
 variables:
   IMAGE_NAME: nirajvishwakarma/demo-app
   IMAGE_TAG: python-app-v1.1
-  DOCKER_HOST: tcp://localhost:2375
+#  DOCKER_HOST: tcp://localhost:2375
 
 stages:
   - test
@@ -24,6 +24,7 @@ build_image:
     DOCKER_TLS_CERTDIR: " /certs/client "
   before_script:
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+    - apt-get install docker.io
   script:
     - whoami
     - docker ps -a
