@@ -11,7 +11,7 @@ run_tests:
   stage: test
   image: python:3.9-slim-buster
   script:
-    - sudo apt-get update
+    - apt update
 
 build_image:
   stage: build
