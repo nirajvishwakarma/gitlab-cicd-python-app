@@ -10,10 +10,8 @@ stages:
 run_tests:
   stage: test
   image: python:3.9-slim-buster
-  before_script:
-    - apt-get update && apt-get install make
   script:
-    - make test
+    - apt-get update
 
 build_image:
   stage: build
