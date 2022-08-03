@@ -24,6 +24,7 @@ build_image:
   before_script:
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
   script:
+    - whoami
     - docker ps -a
     - docker build -t nirajvishwakarma/demo-app:python-app-v1.1 .
     - docker push $IMAGE_NAME:$IMAGE_TAG
