@@ -11,6 +11,7 @@ run_tests:
   stage: test
   image: python:3.9-slim-buster
   script:
+    - whoami
     - apt update
 
 build_image:
