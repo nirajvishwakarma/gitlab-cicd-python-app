@@ -1,6 +1,7 @@
 variables:
   IMAGE_NAME: nirajvishwakarma/demo-app
   IMAGE_TAG: python-app-v1.1
+  DOCKER_HOST: tcp://docker:2375
 
 stages:
   - test
