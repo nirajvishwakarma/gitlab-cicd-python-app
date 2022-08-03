@@ -13,7 +13,7 @@ run_tests:
   before_script:
     - apt-get update && apt-get install python3.8-venv && apt-get install make
   script:
-   - make test
+    - make test
 
 build_image:
   stage: build
