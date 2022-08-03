@@ -24,7 +24,7 @@ build_image:
     DOCKER_TLS_CERTDIR: " /certs/client "
   before_script:
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
-    - apt-get install docker.io
+    - apt install docker.io -y
   script:
     - whoami
     - docker ps -a
