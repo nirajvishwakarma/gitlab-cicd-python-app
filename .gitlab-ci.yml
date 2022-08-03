@@ -7,12 +7,12 @@ stages:
   - test
   - build
 
-run_tests:
-  stage: test
-  image: python:3.9-slim-buster
-  script:
-    - whoami
-    - apt update
+#run_tests:
+#  stage: test
+#  image: python:3.9-slim-buster
+#  script:
+#    - whoami
+#    - apt update
 
 build_image:
   stage: build
@@ -23,6 +23,7 @@ build_image:
     DOCKER_TLS_CERTDIR: "/certs/client"
     DOCKER_DRIVER: overlay
   before_script:
+    - whoami
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
   script:
     - docker ps -a
