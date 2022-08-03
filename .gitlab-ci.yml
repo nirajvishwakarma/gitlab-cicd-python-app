@@ -17,7 +17,7 @@ run_tests:
 
 build_image:
   stage: build
-  image: docker:latest
+  image: docker:18.09.7-dind
   services:
     - docker:19-dind
   variables:
