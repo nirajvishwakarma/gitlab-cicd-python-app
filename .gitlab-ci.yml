@@ -9,12 +9,12 @@ stages:
 
 run_tests:
   stage: test
-  image: python:latest
+  image: python:3.9-slim-buster
   before_script:
-    - apt-get update -y && apt-get install make -y
+    - apt-get update && apt-get install make
   script:
-    - apt install python3.8-venv -y
     - make test
+
 
 #build_image:
 #  stage: build
