@@ -1,6 +1,6 @@
-install and register gitlab-runners
-create Variables for Dockerhus user and password
-create variable for pem key for th server
+**1. install and register gitlab-runners
+2.  create Variables for Dockerhus user and password
+3. create variable for pem key for th server******
 
 
 
