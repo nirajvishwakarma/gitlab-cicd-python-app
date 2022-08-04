@@ -35,11 +35,13 @@ build_image:
 
 deploy:
   stage: deploy
+  variables:
+    PYTHON_APP: python
   before_script:
     - chmod 400 $SSH_KEY
   script:
     - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@44.202.108.106 "
       docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD &&
-      docker ps -aq | xargs docker stop | xargs docker rm &&
-      docker run -p 5000:5000 $IMAGE_NAME:$IMAGE_TAG &&
+      docker ps -aq | xargs docker stop $PYTHON_APP | xargs docker rm $PYTHON_APP &&
+      docker run -p 5000:5000 --name $PYTHON_APP $IMAGE_NAME:$IMAGE_TAG &&
       docker ps"
