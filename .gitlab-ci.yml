@@ -38,4 +38,4 @@ deploy:
   before_script:
     - chmod 400 $SSH_KEY
   script:
-    - ssh -i $SSH_KEY ubuntu@44.202.108.106
+    - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@44.202.108.106
