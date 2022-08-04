@@ -39,4 +39,5 @@ deploy:
     - chmod 400 $SSH_KEY
   script:
     - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@44.202.108.106 "
+      docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD &&
       docker ps"
